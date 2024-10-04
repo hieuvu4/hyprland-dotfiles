@@ -103,6 +103,6 @@ window#waybar {
     margin-right: 10px;
 }
 
-#custom-notification * {
+#custom-notification {
     margin-right: 5px;
 }
