@@ -1,9 +1,0 @@
-@import 'colors.css';
-/* sidebar */
-.thunar .sidebar .view { background-color: #000; }
-/* main view */
-.thunar .standard-view .view { background-color: #000; }
-/* status bar */
-.thunar grid paned grid  { background-color: #000;}
-/* toolbar */
-.thunar toolbar, .thunar toolbar entry  { background-color: #000; }
