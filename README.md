@@ -6,8 +6,26 @@ Configure in `nmtui`
 ```
 sudo pacman -S bluez bluez-utils
 ```
-Activate bluetooth: `sudo systemctl start bluetooth`
-Autostart bluetooth:  `sudo systemctl enable bluetooth`
+Activate bluetooth:
+```
+sudo systemctl start bluetooth
+```
+
+Autostart bluetooth:  
+```
+sudo systemctl enable bluetooth
+```
+
+**Git**:
+```
+sudo pacman -S git
+```
+
+**Yay**:
+```
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd
+```
+
 
 **Fonts**:
 ```
@@ -49,5 +67,5 @@ For changing window decoration + icons
 **Applications**:
 
 ```
-sudo pacman -S thunar firefox unzip
+sudo pacman -S thunar firefox unzip obsidian
 ```

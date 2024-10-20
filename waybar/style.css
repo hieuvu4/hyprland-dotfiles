@@ -35,13 +35,12 @@ window#waybar {
 }
 
 #workspaces {
-    margin-left: 5px;
+    
 }
 
 #workspaces button {
     padding: 5px;
     color: #5a5c66;
-    margin-right: 5px;
 }
 
 #workspaces button.active {
@@ -69,6 +68,20 @@ window#waybar {
 #window {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#privacy-item.screenshare {
+    color: #00DC54; 
+}
+
+#privacy-item.audio-in {
+    color: #FF8E00; 
+    
+}
+
+#privacy-item.audio-out {
+    color: #4a82a8; 
+    
 }
 
 #tray * {
