@@ -1,5 +1,5 @@
 **Wifi**:
-Activate wlan : `ip link set wlan0 up`
+
 Configure in `nmtui` 
 
 **Bluetooth**:
