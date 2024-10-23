@@ -26,6 +26,20 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd
 ```
 
+**Hyprland**:
+```
+yay -S hyprland-git
+```
+
+**Kitty**:
+```
+yay -S kitty-git
+`````
+
+**SWWW**:
+```
+sudo pacman -S swww
+```
 
 **Fonts**:
 ```
