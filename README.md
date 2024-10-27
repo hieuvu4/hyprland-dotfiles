@@ -73,6 +73,10 @@ sudo pacman -S gtk3 gtk4
 
 **Plasma**:
 ```
+startplasma-wayland
+```
+
+```
 sudo pacman -S plasma-meta
 ```
 
