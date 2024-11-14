@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "mode": "dock",
     "exclusive": true,
     "passthrough": false,
@@ -22,10 +22,9 @@
         "network",
         "battery",
         "pulseaudio",
-        "pulseaudio#microphone",
-        "custom/notification"
+        "pulseaudio#microphone"
     ],
-
+    
     "clock": {
         "timezone": "Europe/Berlin",
         "format": "{:%A  %B-%d-%Y  %I:%M:%S %p}",
@@ -150,6 +149,7 @@
     },
 
     "pulseaudio#microphone": {
+        "tooltip": false,
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "  Muted",
@@ -167,27 +167,5 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-          "notification": "<span foreground='red'><sup></sup></span>",
-          "none": "",
-          "dnd-notification": "<span foreground='red'><sup></sup></span>",
-          "dnd-none": "",
-          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-          "inhibited-none": "",
-          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-          "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-      }
-
+    }
 }

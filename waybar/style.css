@@ -18,11 +18,10 @@ window#waybar {
 #tray,
 #memory,
 #cpu,
-#network,
-#pulseaudio,
 #bluetooth,
-#custom-notification {
-    color: #A6ADC8;
+#network,
+#pulseaudio {
+    color: #DCDCDC;
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 5px;
@@ -40,11 +39,11 @@ window#waybar {
 
 #workspaces button {
     padding: 5px;
-    color: #5a5c66;
+    color: #444444;
 }
 
 #workspaces button.active {
-    color: #A6ADC8;
+    color: #DCDCDC;
 }
 
 #workspaces button.focused {
@@ -86,6 +85,7 @@ window#waybar {
 
 #tray * {
     background: #000;
+    color: #A6ADC8;
 }
 
 #memory {
@@ -114,8 +114,4 @@ window#waybar {
 
 #battery {
     margin-right: 10px;
-}
-
-#custom-notification {
-    margin-right: 5px;
 }
