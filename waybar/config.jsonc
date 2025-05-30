@@ -14,28 +14,15 @@
         "hyprland/window"
     ],
     "modules-right": [
-        //"privacy",
-        "tray",
-        "memory",
-        "cpu",
-        "bluetooth",
-        "network",
-        "battery",
-        "pulseaudio",
-        "pulseaudio#microphone"
+        "group/expand","bluetooth","network","battery"
     ],
     
     "clock": {
         "timezone": "Europe/Berlin",
         "format": "{:%A  %B-%d-%Y  %I:%M:%S %p}",
         "interval": 1,
-        "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "on-scroll": 1,
-            "on-click-right": "mode",
             "format": {
                 "months": "<span color='#a6adc8'><b>{}</b></span>",
                 "weekdays": "<span color='#a6adc8'><b>{}</b></span>",
@@ -48,13 +35,26 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true
-        // "on-click": "activate",
-        // "format": "{icon}"
     },
 
     "hyprland/window": {
-        //"format": "󰣇 {}"
         "format": "{}"
+    },
+
+
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["custom/expand", "tray", "memory", "cpu", "temperature", "pulseaudio", "pulseaudio#microphone"]
     },
 
     "privacy": {
@@ -80,34 +80,15 @@
         ]
     },
 
+
     "tray": {
         "icon-size": 13,
         "spacing": 10
     },
 
-    "bluetooth": {
-        "format-on": "󰂯",
-        "format-off": "󰂲",
-        "format-disabled": "󰂲", // an empty format will hide the module
-        "format-connected": "󰂱 {num_connections}",
-        // "tooltip-format": "{controller_alias}\t{controller_address}",
-        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-    },
-
     "memory": {
-        "states": {
-            "c": 90, // critical
-            "h": 60, // high
-            "m": 30 // medium
-        },
         "interval": 2,
-        "format": "󰾆 {used}GB",
-        "format-m": "󰾅 {used}GB",
-        "format-h": "󰓅 {used}GB",
-        "format-c": " {used}GB",
-        "format-alt": "󰾆 {percentage}%",
+        "format": "mem {used}GB",
         "max-length": 10,
         "tooltip": true,
         "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
@@ -115,57 +96,70 @@
 
     "cpu": {
         "interval": 2,
-        "format": "󰍛 {usage}%",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+        "format": "cpu {usage}%"
+    },
+
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "tmp {temperatureC}°C"
+    },
+
+
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        "format-connected-battery": "{device_battery_percentage}% 󰂯",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%"
     },
 
     "network": {
+        "format-wifi": "",
+        "format-ethernet":"",
+        "format-disconnected": "",
         "tooltip": true,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 ",
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "vol {volume}%",
         "tooltip": false,
-        "format-muted": "  Muted",
-        "on-click": "pavucontrol -t 3",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["","", "", ""]
-        }
+        "format-muted": "vol off",
+        "on-click": "pavucontrol -t 3"
     },
 
     "pulseaudio#microphone": {
         "tooltip": false,
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "  Muted",
+        "format-source": "mic {volume}%",
+        "format-source-muted": "mic off",
         "on-click": "pavucontrol -t 4"
     },
 
     "battery": {
+        "interval":1,
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    }
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-icons": [
+        "󰁻",
+        "󰁼",
+        "󰁾",
+        "󰂀",
+        "󰂂",
+        "󰁹"
+        ]
+    },
 }
