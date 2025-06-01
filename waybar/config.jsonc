@@ -14,7 +14,11 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "group/expand","bluetooth","network","battery"
+        "privacy", 
+        "tray", 
+        "group/expand",
+        "network",
+        "battery"
     ],
     
     "clock": {
@@ -41,6 +45,30 @@
         "format": "{}"
     },
 
+    "privacy": {
+        "icon-spacing": 10,
+        "icon-size": 13,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true
+            }
+        ]
+    },
+
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
+    },
 
     "custom/expand": {
         "format": "",
@@ -54,36 +82,7 @@
             "transition-to-left": true,
             "click-to-reveal": true
         },
-        "modules": ["custom/expand", "tray", "memory", "cpu", "temperature", "pulseaudio", "pulseaudio#microphone"]
-    },
-
-    "privacy": {
-        "icon-spacing": 10,
-        "icon-size": 13,
-        "transition-duration": 250,
-        "modules": [
-            {
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 1
-            },
-            {
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 1
-            },
-            {
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 1
-            }
-        ]
-    },
-
-
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
+        "modules": ["custom/expand", "memory", "cpu", "temperature","backlight", "pulseaudio", "pulseaudio#microphone", "bluetooth"]
     },
 
     "memory": {
@@ -99,33 +98,14 @@
         "format": "cpu {usage}%"
     },
 
-
     "temperature": {
         "critical-threshold": 80,
         "format": "tmp {temperatureC}°C"
     },
 
-
-    "bluetooth": {
-        "format-on": "󰂯",
-        "format-off": "󰂲",
-        "format-disabled": "󰂲", // an empty format will hide the module
-        "format-connected": "󰂱 {num_connections}",
-        "format-connected-battery": "{device_battery_percentage}% 󰂯",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%"
-    },
-
-    "network": {
-        "format-wifi": "",
-        "format-ethernet":"",
-        "format-disconnected": "",
-        "tooltip": true,
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "interval": 2
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "bri {percent}%"
     },
 
     "pulseaudio": {
@@ -143,6 +123,29 @@
         "on-click": "pavucontrol -t 4"
     },
 
+    "bluetooth": {
+        "format-on": "bt on",
+        "format-off": "bt off",
+        "format-disabled": "bt off", // an empty format will hide the module
+        "format-connected": "bt {num_connections}",
+        "format-connected-battery": "{device_battery_percentage}% 󰂯",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%"
+    },
+
+    "network": {
+        "format-wifi": "wifi {essid} {signalStrength}%",
+        "format-ethernet":"ethernet",
+        "format-disconnected": "no internet",
+        "format-disabled": "wifi off",
+        "tooltip": true,
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-linked": "linked {ifname}",
+        "interval": 2
+    },
+
     "battery": {
         "interval":1,
         "states": {
@@ -150,16 +153,8 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% 󰂄",
-        "format-icons": [
-        "󰁻",
-        "󰁼",
-        "󰁾",
-        "󰂀",
-        "󰂂",
-        "󰁹"
-        ]
-    },
+        "format": "bat {capacity}%",
+        "format-charging": "bat {capacity}%",
+        "format-plugged": "bat {capacity}%"
+    }
 }

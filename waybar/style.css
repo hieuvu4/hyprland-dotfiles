@@ -15,15 +15,17 @@ window#waybar {
 #clock,
 #workspaces,
 #window,
-#battery,
+#expand, 
+#privacy,
 #tray,
 #memory,
 #cpu,
 #temperature,
+#backlight,
+#pulseaudio,
 #bluetooth,
 #network,
-#pulseaudio,
-#expand {
+#battery {
     color: #DCDCDC;
     padding: 0px 7px;
     margin: 3px 0px;
@@ -57,18 +59,22 @@ window#waybar {
 
 #workspaces button.urgent {
     color: #000;
-    background: #fff;
+    background: #DCDCDC;
     transition: 0.25s;
 }
 
 #workspaces button:hover {
-    color: #fff; 
+    color: #DCDCDC; 
     background: transparent;
 }
 
 #window {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#privacy {
+        
 }
 
 #tray * {
@@ -78,7 +84,6 @@ window#waybar {
 
 #memory {
     
-    
 }
 
 #cpu {
@@ -86,11 +91,11 @@ window#waybar {
 }
 
 #bluetooth {
-    
+    margin-right: 0px;
 }
 
-#network {
-    margin-right: 3px;
+#bluetooth.off {
+    color: #999999;
 }
 
 #pulseaudio {
@@ -98,7 +103,16 @@ window#waybar {
 }
 
 #pulseaudio.microphone {
-    margin-right: -7px;
+    
+}
+
+#network {
+    margin-left: -10px;
+}
+
+#network.disconnected {
+    color: #999999;
+    
 }
 
 #battery {
