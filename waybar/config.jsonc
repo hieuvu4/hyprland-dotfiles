@@ -18,7 +18,8 @@
         "tray", 
         "group/expand",
         "network",
-        "battery"
+        "battery", 
+        "custom/notification"
     ],
     
     "clock": {
@@ -156,5 +157,26 @@
         "format": "bat {capacity}%",
         "format-charging": "bat {capacity}%",
         "format-plugged": "bat {capacity}%"
-    }
+    },
+
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "nc<span foreground='red'><sup></sup></span>",
+      "none": "nc",
+      "dnd-notification": "nc<span foreground='red'><sup></sup></span>",
+      "dnd-none": "nc",
+      "inhibited-notification": "nc<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "nc",
+      "dnd-inhibited-notification": "nc<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "nc"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }

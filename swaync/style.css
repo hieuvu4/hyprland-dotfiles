@@ -1,0 +1,182 @@
+* {
+  font-size: 14px;
+  font-family: JetBrainsMono Nerd Font, monospace;
+  background: none;
+  color: #dcdcdc;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border-color: #000000;
+  outline: none;
+}
+
+.control-center {
+  background-color: #000000;
+  padding: 20px;
+  padding-top: 0;
+  min-width: 400px;
+}
+
+.widget-buttons-grid {
+  background-color: rgba(28, 28, 34, 0.35);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  border:none;
+  background-color: unset;
+  padding: 5 86px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+  font-family: "Materials Symbol Rounded";
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  color: #ffffff;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background-color: #7475D6;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked label {
+  color: #000000;
+}
+
+.widget-title {
+  margin-top: 20px;
+}
+
+.widget-title label {
+  
+}
+
+.widget-title button {
+  border: unset;
+  background-color: unset;
+}
+
+.widget-title button label {
+  
+}
+
+.widget-title button:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.widget-title button:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
+
+.control-center {
+  opacity: 0.85;
+}
+
+.control-center-list {
+  padding-bottom: 1px;
+  background-color: transparent;
+}
+.control-center .notification-row {
+  margin-bottom: 12px;
+}
+.control-center .notification-background {
+  border: 1px solid #dcdcdc;
+  padding: 16px;
+  transition: background-color 0.15s ease;
+}
+.control-center .notification-row:hover .notification-background {
+}
+.control-center .notification .summary {
+  margin-bottom: 5px;
+}
+.control-center .notification .body {
+  
+}
+
+.control-center .notification .time {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10 40px;
+}
+.control-center .notification .close-button {
+  background-color: #000000;
+  color: #000000;
+  margin-top: 200px;
+}
+.control-center .close-button:hover {
+  
+}
+.control-center .close-button image {
+  
+}
+
+.control-center .notification image {
+  margin-right: 12px; /* Space between image and text */
+  min-width: 36px;    /* Define a minimum width */
+  min-height: 36px;   /* Define a minimum height */
+  /* Add or adjust the border-radius property here */
+  border-radius: 8px; /* <<< THIS LINE controls the rounding */
+}
+/* ── 8. Floating Notifications ─────────────────────────────────── */
+
+
+.floating-notifications {
+}
+
+.floating-notifications .notification-row {
+  background-color: alpha(#000000, 0.85);
+  margin-bottom: 12px;
+}
+
+.floating-notifications .notification-background {
+  background-color: #000000;
+  padding: 18px;
+  border: 1px solid #dcdcdc;
+  transition: background-color 0.15s ease;
+}
+.floating-notifications .notification-row:hover .notification-background {
+  
+}
+.floating-notifications .notification .summary {
+  font-weight: 700;
+}
+.floating-notifications .notification .body {
+  
+}
+.floating-notifications .notification .time {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.floating-notifications .notification image {
+  min-width: 48px;
+  min-height: 48px;
+  margin-right: 14px;
+  border-radius: 10px;
+}
+.floating-notifications .close-button {
+  background-color: #000000;
+  border-radius: 50%;
+  min-width: 28px;
+  min-height: 28px;
+}
+.floating-notifications .close-button:hover {
+}
+.floating-notifications .close-button image {
+  
+}
+.floating-notifications .notification-alt-actions {
+  margin-top: 16px;
+  padding-top: 16px;
+}
+.floating-notifications .notification-action button,
+.floating-notifications .notification-alt-actions button {
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 8px 18px;
+  transition: background-color 0.15s ease;
+}
+.floating-notifications .notification-action button:hover,
+.floating-notifications .notification-alt-actions button:hover {
+  
+}

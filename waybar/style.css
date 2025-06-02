@@ -25,7 +25,8 @@ window#waybar {
 #pulseaudio,
 #bluetooth,
 #network,
-#battery {
+#battery,
+#custom-notification {
     color: #DCDCDC;
     padding: 0px 7px;
     margin: 3px 0px;
@@ -116,7 +117,7 @@ window#waybar {
 }
 
 #battery {
-    margin-right: 10px;
+
 }
 
 #battery.charging {
@@ -129,4 +130,13 @@ window#waybar {
 
 #battery.critical {
     color: #cc0000;
+}
+
+#custom-notification {
+    margin-right: 10px;
+}
+
+#custom-notification.dnd-none, #custom-notification.dnd-notification,
+#custom-notification.dnd-inhibited-notification, #custom-notification.dnd-inhibited-none {
+    color: #999999;
 }
