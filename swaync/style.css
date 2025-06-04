@@ -19,12 +19,13 @@
 
 .widget-buttons-grid {
   background-color: rgba(28, 28, 34, 0.35);
+  margin-bottom: 20px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
   border:none;
   background-color: unset;
-  padding: 5 86px;
+  padding: 5 30px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button label {
@@ -44,8 +45,26 @@
   color: #000000;
 }
 
+.widget-dnd {
+  margin-bottom: 10px;
+  font-size: initial;
+}
+
+.widget-dnd>switch slider,
+.widget-dnd>switch:checked slider {
+  background: #000000;
+}
+
+.widget-dnd > switch {
+  box-shadow: none;
+}
+
+.control-center-dnd:checked {
+  background: #7475D6;
+}
+
 .widget-title {
-  margin-top: 20px;
+  
 }
 
 .widget-title label {
@@ -102,7 +121,6 @@
 .control-center .notification .close-button {
   background-color: #000000;
   color: #000000;
-  margin-top: 200px;
 }
 .control-center .close-button:hover {
   
