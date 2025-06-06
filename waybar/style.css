@@ -120,16 +120,16 @@ window#waybar {
 
 }
 
+#battery.critical {
+    color: #cc0000;
+}
+
 #battery.charging {
     color: #00cc00;
 }
 
 #battery.plugged {
     color: #00cc00;
-}
-
-#battery.critical {
-    color: #cc0000;
 }
 
 #custom-notification {
