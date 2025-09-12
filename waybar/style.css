@@ -24,6 +24,7 @@ tooltip label {
 }
 
 /* Common Module Styling */
+#workspaces,
 #clock,
 #battery,
 #pulseaudio,
@@ -32,10 +33,36 @@ tooltip label {
 #memory,
 #bluetooth,
 #temperature,
-#workspaces,
 #backlight {
     padding: 0 14px;
     background-color: rgba(255, 255, 255, 0.1);
+}
+/* Workspace Buttons */
+#workspaces button {
+    min-width: 28px;
+    color: #DCDCDC;
+    border-radius: 20px;
+    margin: 2px 0;
+}
+
+#workspaces button:not(:last-child) {
+    margin-right: 4px;
+}
+
+#workspaces button:hover {
+    color: #FFF;
+    background: none;
+}
+
+#workspaces button.active {
+    background: #DCDCDC;
+    color: #000000;
+}
+
+/* Privacy */
+#privacy {
+    padding: 0 16px;
+    color: #DCDCDC;
 }
 
 /* Tray Specific Padding */
@@ -50,26 +77,6 @@ tooltip label {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Workspace Buttons */
-#workspaces button {
-    min-width: 28px;
-    color: #DCDCDC;
-    border-radius: 20px;
-    margin: 2px 0;
-}
-
-#workspaces button:not(:last-child) {
-    margin-right: 4px;
-}
-
-#workspaces button:hover {
-    background: #FFF;
-}
-
-#workspaces button.active {
-    background: #DCDCDC;
-    color: #000000;
-}
 
 /* Clock and Temperature Custom Radius */
 #temperature {
@@ -87,6 +94,7 @@ tooltip label {
     color: orange;
 }
 
+#memory.critical,
 #battery.critical,
 #temperature.critical {
     color: red;
