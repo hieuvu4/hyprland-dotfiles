@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATUS_FILE="$HOME/.states/.wifi_toggle"
+STATUS_FILE="$HOME/.waybar_states/.wifi_toggle"
 
 if [ ! -f "$STATUS_FILE" ]; then
     echo "on" > "$STATUS_FILE"

@@ -5,7 +5,6 @@
     font-size: 14px;
 }
 
-/* Main Window */
 window#waybar {
     border-radius: 16px;
     background: none;
@@ -13,7 +12,6 @@ window#waybar {
     opacity: 0.75;
 }
 
-/* Tooltip Styling */
 tooltip {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 14px;
@@ -23,25 +21,26 @@ tooltip label {
     color: #DCDCDC;
 }
 
-/* Common Module Styling */
 #workspaces,
-#clock,
-#battery,
-#pulseaudio,
+#bluetooth,
 #network,
+#battery,
+#clock,
+#pulseaudio,
+#backlight,
+#temperature,
 #cpu,
 #memory,
-#bluetooth,
-#temperature,
-#backlight {
+#custom-sunset,
+#custom-dnd {
     padding: 0 14px;
     background-color: rgba(255, 255, 255, 0.1);
 }
-/* Workspace Buttons */
+
 #workspaces button {
     min-width: 28px;
     color: #DCDCDC;
-    border-radius: 20px;
+    border-radius: 16px;
     margin: 2px 0;
 }
 
@@ -51,26 +50,26 @@ tooltip label {
 
 #workspaces button:hover {
     color: #FFF;
+    border-color: transparent;
+    box-shadow: none;
     background: none;
 }
 
 #workspaces button.active {
-    background: #DCDCDC;
-    color: #000000;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: transparent;
+    color: #FFF;
 }
 
-/* Privacy */
 #privacy {
     padding: 0 16px;
     color: #DCDCDC;
 }
 
-/* Tray Specific Padding */
 #tray {
     padding: 0 16px;
 }
 
-/* Workspace Container */
 #workspaces {
     border-radius: 16px;
     margin: 0;
@@ -78,24 +77,40 @@ tooltip label {
 }
 
 
-/* Clock and Temperature Custom Radius */
-#temperature {
-    border-radius: 24px 0 0 24px;
-    padding-left: 24px;
+#bluetooth  {
+    border-radius: 16px 0 0 16px;
+    padding-left: 20px;
 }
 
-#clock {
+#clock,
+#pulseaudio {
     padding-right: 16px;
     border-radius: 0 16px 16px 0;
 }
 
-/* Battery and Temperature Warnings */
-#battery.warning {
-    color: orange;
+#pulseaudio.microphone {
+    padding-right: 14px;
+    border-radius: 0;
 }
 
-#memory.critical,
+#memory {
+    padding: 8px 16px;
+    border-radius: 16px 0 0 16px;
+}
+
 #battery.critical,
 #temperature.critical {
     color: red;
+}
+
+#custom-sunset,
+#custom-dnd {
+    border-radius: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 8px;
+}
+
+#custom-dnd {
+    margin-right: 12px;
 }
