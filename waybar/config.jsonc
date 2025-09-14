@@ -90,7 +90,7 @@
 	// -----------------------------------------------------------------
 
 	"hyprland/window": {
-		"format": "{}"
+		"format": "{initialTitle}"
 	},
 
 	// -----------------------------------------------------------------
@@ -129,6 +129,7 @@
 	},
 
 	"battery": {
+		"interval": 1,
 		"full-at": 95,
 		"states": {
 			"warning": 35,
@@ -155,6 +156,6 @@
 
 	"clock": {
 		"format": "{:%a %h %d %R}",
-		"tooltip": false
+		"tooltip-format": "<tt>{calendar}</tt>",
 	}
 }
