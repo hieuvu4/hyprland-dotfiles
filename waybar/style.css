@@ -21,11 +21,20 @@ tooltip label {
     color: #DCDCDC;
 }
 
+#tray menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #DCDCDC;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+
 #workspaces,
 #bluetooth,
 #network,
 #battery,
 #clock,
+#mpris,
 #pulseaudio,
 #backlight,
 #temperature,
@@ -100,7 +109,15 @@ tooltip label {
 
 #battery.critical,
 #temperature.critical {
-    color: red;
+    color: #cc0000;
+}
+
+#battery.charging {
+    color: #00cc00
+}
+
+#battery.plugged {
+    color: #00cc00;
 }
 
 #custom-sunset,

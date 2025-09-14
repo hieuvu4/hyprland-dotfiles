@@ -1,11 +1,12 @@
 {
 	"name": "topbar",
 	"position": "top",
+	"layer": "bottom",
 	"margin": "8 0 0 8",
 	"mode": "dock",
 	"modules-left": [
 		"hyprland/workspaces",
-		"privacy"
+		"privacy",
 	],
 	"modules-center": [
 		"hyprland/window"
@@ -43,10 +44,12 @@
 			"custom/dnd"
 		]
 	},
+
 	"custom/nothing": {
 		"format": " ",
 		"tooltip": false,
 	},
+
 	"custom/sunset": {
 		"format": "󱩍",
 		"format-alt": "󱩌",
@@ -103,7 +106,7 @@
 		"format-connected": "󰂱 {num_connections}",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected": "{device_alias}: {device_battery_percentage}%\n{device_address}",
 		"on-click": "~/.config/waybar/scripts/bluetooth_toggle.sh"
 	},
 	
@@ -119,7 +122,7 @@
 		"format-linked": "󰄡",
 		"format-disconnected": "󰤯",
 		"format": "󰤭",
-		"tooltip-format": "{essid} ({signalStrength}%) - {gwaddr}",
+		"tooltip-format": "{essid} ({signalStrength}%)\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
 		"tooltip-format-ethernet": "{ifname} - {gwaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		"on-click": "~/.config/waybar/scripts/wifi_toggle.sh"

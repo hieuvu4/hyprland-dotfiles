@@ -1,8 +1,9 @@
 {
 	"name": "infobar",
-	"layer": "top",
 	"position": "top",
-	"margin": "-4 8 0",
+	"layer": "top",
+	"width": 1200,
+	"margin": "-36 8 0",
 	"mode": "dock",
 	"modules-left": [
 	],
@@ -11,6 +12,7 @@
 		"temperature",
         "cpu",
 		"backlight",
+		"mpris",
 		"pulseaudio#microphone",
 		"pulseaudio",
 	],
@@ -91,5 +93,20 @@
 			]
 		},
 		"tooltip": false
-	}
+	},
+
+	"mpris": {
+		"format": "|    {player_icon}  {title} - {artist}    |",
+		"format-paused": "|    {status_icon}  <i>{title} - {artist}</i>    |",
+		"album-len": 0, 
+		"player-icons": {
+			"default": "⏸",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "▶"
+		},
+		"ignored-players": ["zen-browser", "firefox"],
+		"tooltip": false,
+	},
 }

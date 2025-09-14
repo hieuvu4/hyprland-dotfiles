@@ -1,19 +1,34 @@
-width = 100%
-height = 100%
-border-width = 0
+font = monospace bold
+font-size = 10
+
+anchor = top
+width = 1200
+height = 38
+
+horizontal = true
 outline-width = 0
-padding-top = 33%
-padding-left = 10%
-padding-right = 10%
-result-spacing = 25
-num-results = 5
+border-width = 0
+min-input-width = 120
+result-spacing = 15
 
-font = JetBrainsMono Nerd Font
-font-size = 24
+margin-top = 8
 
-text-color = #DCDCDC22
+padding-top = 5
+padding-bottom = 5
+padding-left = 8
+padding-right = 8
 
-prompt-text = ""
+corner-radius = 16
 
-background-color = #000000EE
+prompt-text = "Clipboard: "
+
+input-color = #DCDCDCAA
+
+text-color = #DCDCDC55
+
+background-color = #ffffff1a
 selection-color = #DCDCDC
+
+clip-to-padding = false
+
+hide-cursor = true
