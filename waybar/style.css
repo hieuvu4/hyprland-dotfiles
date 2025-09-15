@@ -34,12 +34,16 @@ tooltip label {
 #network,
 #battery,
 #clock,
-#mpris,
 #pulseaudio,
 #backlight,
 #temperature,
 #cpu,
 #memory,
+#custom-gpu,
+#custom-media-prev,
+#custom-media-next,
+#custom-media-play-pause,
+#custom-seperator,
 #custom-sunset,
 #custom-dnd {
     padding: 0 14px;

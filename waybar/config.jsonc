@@ -20,6 +20,7 @@
 		"group/quicksettings",
 	],
 
+	// -----------------------------------------------------------------
 
 	"hyprland/workspaces": {
 		"persistent-workspaces": {
@@ -32,37 +33,8 @@
 		}
 	},
 
-	"group/quicksettings": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 500,
-        "transition-left-to-right": true,
-    },
-		"modules": [
-			"custom/nothing", // First element is the "group leader" and won't ever be hidden
-			"custom/sunset",
-			"custom/dnd"
-		]
-	},
 
-	"custom/nothing": {
-		"format": " ",
-		"tooltip": false,
-	},
-
-	"custom/sunset": {
-		"format": "󱩍",
-		"format-alt": "󱩌",
-		"on-click": "~/.config/waybar/scripts/hyprsunset_toggle.sh",
-		"tooltip-format": "Night Shift"
-	},
-
-	"custom/dnd": {
-		"format": "󰂚",
-		"format-alt": "󰂛",
-		"on-click": "dunstctl set-paused toggle",
-		"tooltip-format": "Do Not Disturb"
-	},
+	// -----------------------------------------------------------------
 
 	"privacy": {
 		"icon-spacing": 14,
@@ -90,7 +62,8 @@
 	// -----------------------------------------------------------------
 
 	"hyprland/window": {
-		"format": "{initialTitle}"
+		// "format": "{initialTitle}"
+		"format": ""
 	},
 
 	// -----------------------------------------------------------------
@@ -156,6 +129,40 @@
 
 	"clock": {
 		"format": "{:%a %h %d %R}",
-		"tooltip-format": "<tt>{calendar}</tt>",
-	}
+		"tooltip":false
+	},
+
+	// -----------------------------------------------------------------
+
+	"group/quicksettings": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"transition-left-to-right": true,
+		},
+		"modules": [
+			"custom/nothing", // First element is the "group leader" and won't ever be hidden
+			"custom/sunset",
+			"custom/dnd"
+		]
+	},
+
+	"custom/nothing": {
+		"format": " ",
+		"tooltip": false,
+	},
+
+	"custom/sunset": {
+		"format": "󱩍",
+		"format-alt": "󱩌",
+		"on-click": "~/.config/waybar/scripts/hyprsunset_toggle.sh",
+		"tooltip-format": "Night Shift"
+	},
+
+	"custom/dnd": {
+		"format": "󰂚",
+		"format-alt": "󰂛",
+		"on-click": "dunstctl set-paused toggle",
+		"tooltip-format": "Do Not Disturb"
+	},
 }
