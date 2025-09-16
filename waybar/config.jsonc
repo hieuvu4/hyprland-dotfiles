@@ -143,7 +143,8 @@
 		"modules": [
 			"custom/nothing", // First element is the "group leader" and won't ever be hidden
 			"custom/sunset",
-			"custom/dnd"
+			"custom/notification",
+			"custom/pacman-updates"
 		]
 	},
 
@@ -159,10 +160,33 @@
 		"tooltip-format": "Night Shift"
 	},
 
-	"custom/dnd": {
-		"format": "󰂚",
-		"format-alt": "󰂛",
-		"on-click": "dunstctl set-paused toggle",
-		"tooltip-format": "Do Not Disturb"
+	"custom/notification": {
+		"tooltip": true,
+		"tooltip-format": "Notifications",
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "󰪑",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": "󰪑"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -d -sw",
+		"on-click-right": "swaync-client -t -sw",
+		"escape": true
 	},
+
+	"custom/pacman-updates": {
+		"exec": "~/.config/waybar/scripts/pacman-updater/check-updates.sh",
+		"interval": 1,
+		"on-click": "~/.config/waybar/scripts/pacman-updater/do-update.sh",
+		"return-type": "json",
+		"tooltip": true
+	}
 }

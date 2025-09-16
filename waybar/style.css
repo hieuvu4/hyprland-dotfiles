@@ -45,7 +45,8 @@ tooltip label {
 #custom-media-play-pause,
 #custom-seperator,
 #custom-sunset,
-#custom-dnd {
+#custom-notification,
+#custom-pacman-updates {
     padding: 0 14px;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -125,14 +126,15 @@ tooltip label {
 }
 
 #custom-sunset,
-#custom-dnd {
+#custom-notification,
+#custom-pacman-updates {
     border-radius: 16px;
     padding-left: 16px;
     padding-right: 16px;
     margin-right: 8px;
 }
 
-#custom-dnd {
+#custom-pacman-updates {
     padding-right: 17px;
     margin-right: 12px;
 }

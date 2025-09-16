@@ -1,6 +1,6 @@
 packages
 ```
-sudo pacman -S hyprland kitty git unzip vim bluez bluez-utils waybar swww hyprpicker zathura zathura-djvu zathura-pdf-poppler zathura-ps zathura-cb pavucontrol wireplumber pipewire wl-clipboard fastfetch nautilus brightnessctl cliphist htop ranger hyprsunset dunst thunderbird playerctl
+sudo pacman -S hyprland kitty git unzip vim bluez bluez-utils waybar swww hyprpicker zathura zathura-djvu zathura-pdf-poppler zathura-ps zathura-cb pavucontrol wireplumber pipewire wl-clipboard fastfetch nautilus brightnessctl cliphist htop ranger hyprsunset swaync thunderbird playerctl pacman-contrib
 ```
 font
 ```
@@ -51,6 +51,12 @@ chmod +x ~/.config/waybar/scripts/media_buttons.sh
 ```
 ```
 chmod +x ~/.config/waybar/scripts/gpu_usage.sh
+```
+```
+chmod +x ~/.config/waybar/scripts/pacman-updater/check-updates.sh
+```
+```
+chmod +x ~/.config/waybar/scripts/pacman-updater/do-update.sh
 ```
 folder
 ```
