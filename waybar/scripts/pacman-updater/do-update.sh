@@ -3,9 +3,9 @@
 TERMINAL="/usr/bin/kitty" 
 
 $TERMINAL --title "Pacman Update" bash -c '
-    echo "==> start update...";
+    echo "==> Start update...";
     sudo pacman -Syu;
     echo "";
-    echo "==> Update done. Press Enter to close";
-    read
+    echo "==> Done.";
+    sleep 1
 '
